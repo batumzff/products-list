@@ -1,6 +1,6 @@
 # Product List Project
 
-[live link](https://products-list-smoky.vercel.app/) {:target="_blank"}
+[live link](https://products-list-smoky.vercel.app/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
