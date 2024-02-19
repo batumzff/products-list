@@ -12,7 +12,7 @@ This project contains a simple web application for managing a list of products. 
 ## Project Skeleton
 
 ```
-Product List V2 (folder)
+Product List (folder)
 |
 |----readme.md        
 SOLUTION
