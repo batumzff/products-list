@@ -1,4 +1,7 @@
 ## About the Project
+<div align="center">
+  <img src="./src/assets/product-list.gif" />
+</div>
 
 This project contains a simple web application for managing a list of products. Additionally, the application features a search functionality.
 
