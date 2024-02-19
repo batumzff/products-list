@@ -1,34 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
+import { Card, Col } from "react-bootstrap";
+import { MdFavorite } from "react-icons/md";
 
-// const ProductCard = ({ product }) => {
-//   const { id, title, image, price } = product;
-//   return (
-//     <div>
-//       <div>
-//         <h3>{price}</h3>
-//       </div>
-//       <img src={image} alt={title} width="100px" />
-//       <div>
-//         <h2>{title}</h2>
-//       </div>
-//     </div>
-//   );
-// };
+const ProductCard = ({ product }) => {
+  const {price, title, image} = product
+  const [heart, setHeart] = useState(false)
 
-// export default ProductCard;
-
-const ProductCard = ({ title, image, price }) => {
-  //   console.log(props);
+  const handleFavorite = () => {
+    setHeart(!heart)
+  }
   return (
-    <div className="card">
-      <div className="price">
-        <h3>{price} $</h3>
-      </div>
-      <img src={image} alt={title} />
-      <div className="card__over">
-        <h2>{title}</h2>
-      </div>
-    </div>
+    <Col xl={3} lg={4} md={6}>
+      <Card className="rounded-2 m-auto card" role="button">
+        <Card.Header className="d-flex justify-content-between">
+          <Card.Title>{price} $</Card.Title>
+          <MdFavorite size={30} className={heart ? "active-color" : "passive-color"} onClick={handleFavorite}/>
+        </Card.Header>
+        <Card.Img variant="top" src={image} className="player-logo" />
+
+        <Card.Footer className="card__over">
+          <Card.Title>{title}</Card.Title>
+        </Card.Footer>
+      </Card>
+    </Col>
   );
 };
 

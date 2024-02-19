@@ -1,25 +1,20 @@
-// const Header = (props) => {
-//   console.log(props);
-//   const { categories, text } = props;
-//   return <h1>Header</h1>;
-// };
+import React from "react";
+import { Button, Container, Stack } from "react-bootstrap";
+import "./Header.scss";
 
-// export default Header;
-
-import HeaderStyles from "./Header.module.scss";
-
-const Header = ({ categories, text }) => {
-  console.log(text);
+export const Header = ({categories, handleCategory, btnActive}) => {
   return (
-    <div className={HeaderStyles.header}>
-      <h1>{text}</h1>
-      <div className={HeaderStyles.btns}>
+    <Container className="header">
+      <h1>Products List</h1>
+      <Stack
+        direction="vertical"
+        gap={3}
+        className="btns justify-content-center flex-md-row"
+      >
         {categories.map((item) => (
-          <button key={item}>{item}</button>
+          <Button key={item} className={item.toLocaleLowerCase() === btnActive && "active"} variant="light" onClick={handleCategory}>{item.toLocaleUpperCase()}</Button>
         ))}
-      </div>
-    </div>
+      </Stack>
+    </Container>
   );
 };
-
-export default Header;
